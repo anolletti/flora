@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Welcome Resource – Teacher Landing Page</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Bootstrap 5 -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet" />
+
+    <style>
+      :root {
+        --sky: #79c9ff; /* sky blue from image */
+        --sky-light: #c4e6ff;
+        --leaf: #9ad63b; /* bright leaf green */
+        --purple: #b036c9; /* purple monster */
+        --blue-monster: #36a3c9;
+        --text-dark: #273043;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+          sans-serif;
+        color: var(--text-dark);
+        background: linear-gradient(to bottom, var(--sky-light), #ffffff);
+      }
+
+      /* NAVBAR */
+      .navbar-brand {
+        font-weight: 800;
+        letter-spacing: 0.03em;
+      }
+
+      .navbar {
+        background: linear-gradient(90deg, var(--sky), var(--blue-monster));
+      }
+
+      .navbar-nav .nav-link {
+        color: #fff;
+        font-weight: 600;
+        position: relative;
+        padding-inline: 0.9rem;
+      }
+
+      .navbar-nav .nav-link.active {
+        color: #fff;
+      }
+
+      /* active indicator under nav item */
+      .navbar-nav .nav-link.active::after {
+        content: "";
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        bottom: 0.3rem;
+        width: 70%;
+        height: 3px;
+        border-radius: 999px;
+        background: var(--leaf);
+      }
+
+      /* HERO / GET STARTED SECTION */
+      section {
+        padding: 5rem 0;
+      }
+
+      #get-started {
+        background: radial-gradient(
+          circle at top left,
+          #ffffff 0,
+          #ffffff 45%,
+          var(--sky-light) 100%
+        );
+      }
+
+      .hero-tagline {
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        font-size: 0.9rem;
+        font-weight: 700;
+        color: var(--purple);
+      }
+
+      .hero-title {
+        font-size: clamp(2.1rem, 4vw, 2.8rem);
+        font-weight: 800;
+        color: var(--blue-monster);
+      }
+
+      .step-pill {
+        background: #fff;
+        border-radius: 1.5rem;
+        padding: 0.8rem 1rem;
+        display: flex;
+        align-items: center;
+        box-shadow: 0 8px 18px rgba(0, 0, 0, 0.09);
+        gap: 0.7rem;
+      }
+
+      .step-pill-number {
+        width: 32px;
+        height: 32px;
+        border-radius: 999px;
+        background: var(--leaf);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 800;
+        color: #275000;
+        flex-shrink: 0;
+      }
+
+      .hero-image-placeholder {
+        border-radius: 1.8rem;
+        border: 4px dashed rgba(255, 255, 255, 0.9);
+        background: linear-gradient(
+          180deg,
+          var(--sky) 0%,
+          var(--sky-light) 50%,
+          #ffffff 100%
+        );
+        min-height: 260px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 14px 30px rgba(0, 0, 0, 0.1);
+        position: relative;
+        overflow: hidden;
+      }
+
+      .hero-image-placeholder::before {
+        content: "Drop your resource image here";
+        font-weight: 700;
+        color: #ffffff;
+        text-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
+      }
+
+      .hero-badge {
+        position: absolute;
+        bottom: 1rem;
+        right: 1rem;
+        background: var(--purple);
+        color: #fff;
+        padding: 0.4rem 0.8rem;
+        border-radius: 999px;
+        font-size: 0.8rem;
+        font-weight: 700;
+      }
+
+      /* MODULES */
+      #modules {
+        background: #ffffff;
+      }
+
+      .module-card {
+        border-radius: 1.5rem;
+        border: none;
+        box-shadow: 0 10px 24px rgba(0, 0, 0, 0.07);
+        transition: transform 0.15s ease, box-shadow 0.15s ease;
+      }
+
+      .module-card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 16px 30px rgba(0, 0, 0, 0.1);
+      }
+
+      .module-pill {
+        display: inline-block;
+        font-size: 0.75rem;
+        padding: 0.25rem 0.6rem;
+        border-radius: 999px;
+        background: rgba(154, 214, 59, 0.18);
+        color: #416400;
+        font-weight: 600;
+      }
+
+      .section-title {
+        font-weight: 800;
+        color: var(--blue-monster);
+      }
+
+      .section-kicker {
+        text-transform: uppercase;
+        letter-spacing: 0.12em;
+        font-size: 0.8rem;
+        font-weight: 700;
+        color: var(--purple);
+      }
+
+      /* FAQ */
+      #faq {
+        background: linear-gradient(to bottom, #ffffff, var(--sky-light));
+      }
+
+      .accordion-button:not(.collapsed) {
+        background-color: rgba(176, 54, 201, 0.08);
+        color: var(--text-dark);
+      }
+
+      .accordion-button:focus {
+        box-shadow: 0 0 0 0.15rem rgba(154, 214, 59, 0.6);
+      }
+
+      /* FOOTER */
+      footer {
+        font-size: 0.85rem;
+        color: rgba(0, 0, 0, 0.6);
+      }
+
+      /* Scrollspy target container */
+      main {
+        position: relative;
+        scroll-margin-top: 80px;
+      }
+
+      @media (max-width: 767.98px) {
+        section {
+          padding: 3.5rem 0;
+        }
+
+        .hero-title {
+          text-align: center;
+        }
+
+        .hero-tagline,
+        #get-started p.lead {
+          text-align: center;
+        }
+
+        .step-pill {
+          margin-inline: auto;
+        }
+      }
+    </style>
+  </head>
+  <body
+    data-bs-spy="scroll"
+    data-bs-target="#mainNav"
+    data-bs-offset="80"
+    tabindex="0">
+    <!-- NAVBAR -->
+    <nav
+      id="mainNav"
+      class="navbar navbar-expand-lg navbar-dark fixed-top shadow-sm">
+      <div class="container">
+        <a class="navbar-brand" href="#get-started"> 🌈 Welcome! </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div
+          class="collapse navbar-collapse justify-content-end"
+          id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#get-started"
+                >Get Started</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#modules">Modules</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#faq">FAQ</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <main>
+      <!-- GET STARTED + IMAGE SECTION -->
+      <section id="get-started">
+        <div class="container">
+          <div class="row align-items-center gy-4">
+            <!-- Text / Steps -->
+            <div class="col-lg-6">
+              <p class="hero-tagline mb-2">
+                Playful resource • Professional planning
+              </p>
+              <h1 class="hero-title mb-3">Get started in three easy steps.</h1>
+              <p class="lead mb-4">
+                This resource is built for very young learners, but this page is
+                all about making it effortless for you to bring it into your
+                classroom routine.
+              </p>
+
+              <div class="d-flex flex-column gap-3">
+                <div class="step-pill">
+                  <div class="step-pill-number">1</div>
+                  <div>
+                    <strong>Explore the resource.</strong><br />
+                    Skim the modules below and pick the ones that match your
+                    current unit or theme.
+                  </div>
+                </div>
+                <div class="step-pill">
+                  <div class="step-pill-number">2</div>
+                  <div>
+                    <strong>Plan your lesson flow.</strong><br />
+                    Use the suggested timing and tips to fit activities into
+                    your daily schedule.
+                  </div>
+                </div>
+                <div class="step-pill">
+                  <div class="step-pill-number">3</div>
+                  <div>
+                    <strong>Press play and observe.</strong><br />
+                    Run the activities, watch how students respond, and use the
+                    FAQ to tweak on the fly.
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Image Placeholder -->
+            <div class="col-lg-6">
+              <div class="hero-image-placeholder">
+                <!-- Replace this div content with an <img> of your resource -->
+                <span class="hero-badge">Teacher view preview</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- MODULES SECTION -->
+      <section id="modules">
+        <div class="container">
+          <div class="row mb-4 align-items-end">
+            <div class="col-md-7">
+              <p class="section-kicker mb-1">Inside the resource</p>
+              <h2 class="section-title mb-2">Modules at a glance</h2>
+              <p class="mb-0">
+                Each module is built to feel like play for children and like a
+                well-organized toolkit for you. Mix and match, or follow them in
+                order.
+              </p>
+            </div>
+            <div class="col-md-5 text-md-end mt-3 mt-md-0">
+              <span class="module-pill">Flexible • Short • Ready-to-use</span>
+            </div>
+          </div>
+
+          <div class="row g-4">
+            <div class="col-md-4">
+              <div class="card module-card h-100">
+                <div class="card-body">
+                  <div class="mb-2 fs-3">🧠</div>
+                  <h5 class="card-title fw-bold">Warm-Up & Routines</h5>
+                  <p class="card-text small">
+                    5–10 minute openers that help little learners settle in:
+                    songs, chants, and quick movement breaks aligned with the
+                    theme.
+                  </p>
+                  <ul class="small mb-0">
+                    <li>Ready-made slides / prompts</li>
+                    <li>Non-verbal participation ideas</li>
+                    <li>Visual supports for emergent learners</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-4">
+              <div class="card module-card h-100">
+                <div class="card-body">
+                  <div class="mb-2 fs-3">🎨</div>
+                  <h5 class="card-title fw-bold">Hands-On Play</h5>
+                  <p class="card-text small">
+                    Structured play centers with simple instructions and clear
+                    learning goals, so exploration doesn’t turn into chaos.
+                  </p>
+                  <ul class="small mb-0">
+                    <li>Printable prompts & mats</li>
+                    <li>Ideas for low-prep materials</li>
+                    <li>Language targets you can quickly reference</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-4">
+              <div class="card module-card h-100">
+                <div class="card-body">
+                  <div class="mb-2 fs-3">💬</div>
+                  <h5 class="card-title fw-bold">Wrap-Up & Reflection</h5>
+                  <p class="card-text small">
+                    Short reflection, assessment-for-learning prompts, and exit
+                    activities to capture how students are doing.
+                  </p>
+                  <ul class="small mb-0">
+                    <li>Quick check-ins you can document</li>
+                    <li>Student-friendly reflection stems</li>
+                    <li>Suggestions for home connections</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Optional callout row -->
+          <div class="row mt-5">
+            <div class="col">
+              <div
+                class="p-3 p-md-4 rounded-4"
+                style="background: rgba(154, 214, 59, 0.12)">
+                <strong>Tip:</strong> Start with one module this week, even if
+                you don’t feel “fully ready”. The design is simple on purpose so
+                you can test, adjust, and build routines over time.
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- FAQ SECTION -->
+      <section id="faq">
+        <div class="container">
+          <div class="row mb-4">
+            <div class="col-lg-7">
+              <p class="section-kicker mb-1">Need-to-know details</p>
+              <h2 class="section-title mb-2">FAQ for busy teachers</h2>
+              <p class="mb-0">
+                You don’t need to read a manual to get started. Skim the
+                questions below and you’ll know exactly what to expect.
+              </p>
+            </div>
+          </div>
+
+          <div class="accordion" id="faqAccordion">
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="faq1-heading">
+                <button
+                  class="accordion-button"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#faq1"
+                  aria-expanded="true"
+                  aria-controls="faq1">
+                  How much prep time do I need?
+                </button>
+              </h2>
+              <div
+                id="faq1"
+                class="accordion-collapse collapse show"
+                aria-labelledby="faq1-heading"
+                data-bs-parent="#faqAccordion">
+                <div class="accordion-body">
+                  Most modules can be used with
+                  <strong>10–15 minutes of prep</strong>. Print, project, or
+                  open the resource on your screen, glance at the suggested
+                  flow, and you’re ready. Any optional materials are clearly
+                  listed at the top of each module.
+                </div>
+              </div>
+            </div>
+
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="faq2-heading">
+                <button
+                  class="accordion-button collapsed"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#faq2"
+                  aria-expanded="false"
+                  aria-controls="faq2">
+                  What age group is this designed for?
+                </button>
+              </h2>
+              <div
+                id="faq2"
+                class="accordion-collapse collapse"
+                aria-labelledby="faq2-heading"
+                data-bs-parent="#faqAccordion">
+                <div class="accordion-body">
+                  The visuals and activities are created for
+                  <strong>very young children</strong> (early years / primary).
+                  Instructions, timing, and notes are written for teachers so
+                  that the content stays playful for students and structured for
+                  you.
+                </div>
+              </div>
+            </div>
+
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="faq3-heading">
+                <button
+                  class="accordion-button collapsed"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#faq3"
+                  aria-expanded="false"
+                  aria-controls="faq3">
+                  Can I adapt the resource for different groups or languages?
+                </button>
+              </h2>
+              <div
+                id="faq3"
+                class="accordion-collapse collapse"
+                aria-labelledby="faq3-heading"
+                data-bs-parent="#faqAccordion">
+                <div class="accordion-body">
+                  Yes. Prompts are intentionally short and visual so you can
+                  <strong>modify the language</strong>, swap materials, and
+                  adjust the level of support. Use the notes section of each
+                  module to record what worked for your class.
+                </div>
+              </div>
+            </div>
+
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="faq4-heading">
+                <button
+                  class="accordion-button collapsed"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#faq4"
+                  aria-expanded="false"
+                  aria-controls="faq4">
+                  Is there any way to share feedback?
+                </button>
+              </h2>
+              <div
+                id="faq4"
+                class="accordion-collapse collapse"
+                aria-labelledby="faq4-heading"
+                data-bs-parent="#faqAccordion">
+                <div class="accordion-body">
+                  Absolutely. We love hearing how things land in real
+                  classrooms. Use the contact link in the resource, or collect
+                  quick “glows and grows” from your students and send a short
+                  summary when you have a moment.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="py-3 text-center">
+      <div class="container">
+        © <span id="year"></span> Welcome Resource · Built for classrooms full
+        of curious little monsters.
+      </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+      // Update footer year
+      document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
+  </body>
+</html>
