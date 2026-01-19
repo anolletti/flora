@@ -261,14 +261,30 @@ section {
   box-shadow: 0 16px 30px rgba(0, 0, 0, 0.1);
 }
 
-.module-pill {
-  display: inline-block;
-  font-size: 0.75rem;
-  padding: 0.25rem 0.6rem;
-  border-radius: 999px;
-  background: rgba(154, 214, 59, 0.18);
-  color: #416400;
-  font-weight: 600;
+.module-pill-btn {
+  padding: 0.5rem 2rem;
+  border: 0px solid rgba(0, 0, 0, 0.25);
+  border-radius: 20px;
+  font-size: 1.2rem;
+  text-decoration: none;
+  color: inherit;
+  background: transparent;
+}
+
+.module-pill-btn:hover {
+  background: rgba(0, 0, 0, 0.04);
+  text-decoration: none;
+}
+
+.module-icon {
+  width: 120px;
+  height: 120px;
+  object-fit: contain;
+}
+
+.module-icon:hover {
+  filter: brightness(1.15);
+  transform: translateY(-2px);
 }
 
 .section-title {
@@ -296,6 +312,10 @@ section {
 
 .accordion-button:focus {
   box-shadow: 0 0 0 0.15rem rgba(154, 214, 59, 0.6);
+}
+
+#modules {
+  background: #ffffff;
 }
 
 /* FOOTER */
