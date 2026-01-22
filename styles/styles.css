@@ -1,11 +1,19 @@
+/* =========================
+   Theme + Base
+========================= */
+
 :root {
-  --sky: #79c9ff; /* sky blue from image */
+  --sky: #79c9ff;
   --sky-light: #c4e6ff;
-  --leaf: #9ad63b; /* bright leaf green */
-  --purple: #b036c9; /* purple monster */
-  --deep-purple: #7f3fff;
+  --leaf: #9ad63b;
+  --purple: #b036c9;
   --blue-monster: #36a3c9;
   --text-dark: #273043;
+  --nav-accent: #2f80ed;
+  --text-level-one: #f747ba;
+  --text-level-two: #c71f2e;
+  --text-level-three: #fcd13c;
+  --text-level-four: #44ccdf;
 }
 
 html {
@@ -23,7 +31,36 @@ body {
   background: linear-gradient(to bottom, var(--sky-light), #ffffff);
 }
 
-/* NAVBAR */
+/* With a fixed navbar, ensure anchor jumps land below it */
+section {
+  padding: 5rem 0;
+  scroll-margin-top: 80px;
+}
+
+/* =========================
+   Text Elements
+========================= */
+
+.level-one {
+  color: var(--text-level-one);
+}
+
+.level-two {
+  color: var(--text-level-two);
+}
+
+.level-three {
+  color: var(--text-level-three);
+}
+
+.level-four {
+  color: var(--text-level-four);
+}
+
+/* =========================
+   Navbar
+========================= */
+
 .navbar {
   background: #ffffff;
   font-family: "Nunito", sans-serif;
@@ -33,7 +70,7 @@ body {
 .navbar-brand {
   font-weight: 700;
   letter-spacing: 0.02em;
-  color: #374957; /* ClassDojo-style dark grey */
+  color: #374957;
 }
 
 .navbar-brand span {
@@ -45,7 +82,7 @@ body {
 }
 
 .navbar-nav .nav-link {
-  color: #4b5c6b; /* soft navy/grey like ClassDojo */
+  color: #4b5c6b;
   font-weight: 600;
   position: relative;
   padding-inline: 1.1rem;
@@ -53,14 +90,14 @@ body {
 
 .navbar-nav .nav-link:hover,
 .navbar-nav .nav-link:focus {
-  color: #2f80ed; /* bright accent blue */
+  color: var(--nav-accent);
 }
 
 .navbar-nav .nav-link.active {
-  color: #2f80ed;
+  color: var(--nav-accent);
 }
 
-/* active indicator under nav item */
+/* Active indicator under nav item */
 .navbar-nav .nav-link.active::after {
   content: "";
   position: absolute;
@@ -70,23 +107,21 @@ body {
   width: 40%;
   height: 3px;
   border-radius: 999px;
-  background: #2f80ed;
+  background: var(--nav-accent);
 }
-/* WELCOME SECTION */
+
+/* =========================
+   Welcome
+========================= */
 
 .welcome-section {
   position: relative;
-  height: 580px;
+  height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
   overflow: hidden;
-  margin-top: 80px;
-}
-
-.welcome-highlighted-text {
-  color: var(--purple);
-  font-weight: 900;
+  /* margin-top: 70px; offset for fixed navbar */
 }
 
 .welcome-section::before {
@@ -109,7 +144,7 @@ body {
   position: relative;
   z-index: 2;
   text-align: center;
-  color: #273043;
+  color: var(--text-dark);
 }
 
 .welcome-title {
@@ -126,10 +161,60 @@ body {
   color: #3f4f5a;
 }
 
-/* HERO / GET STARTED SECTION */
-section {
-  padding: 5rem 0;
+.welcome-highlighted-text {
+  color: var(--purple);
+  font-weight: 900;
 }
+
+/* =========================
+   Shared Section Typography
+========================= */
+
+.section-title {
+  font-weight: 800;
+  color: var(--blue-monster);
+}
+
+.section-kicker {
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--purple);
+}
+
+.module-pill {
+  display: inline-block;
+  font-size: 0.75rem;
+  padding: 0.25rem 0.6rem;
+  border-radius: 999px;
+  background: rgba(154, 214, 59, 0.18);
+  color: #416400;
+  font-weight: 600;
+}
+
+/* =========================
+   Intro
+========================= */
+
+.intro-section {
+  background: #ffffff;
+  min-height: 80vh;
+}
+
+.intro-video-placeholder {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  border-radius: 1.25rem;
+  background: linear-gradient(135deg, #f3f5f7, #e8ebee);
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+}
+
+/* =========================
+   Get Started (Hero)
+========================= */
 
 #get-started {
   background: radial-gradient(
@@ -139,14 +224,6 @@ section {
     var(--sky-light) 100%
   );
   min-height: 100vh;
-}
-
-.hero-tagline {
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  font-size: 0.9rem;
-  font-weight: 700;
-  color: var(--purple);
 }
 
 .hero-title {
@@ -178,113 +255,25 @@ section {
   flex-shrink: 0;
 }
 
-.hero-image-placeholder {
-  position: relative;
-  width: 100%;
-  min-height: 260px; /* required for object-fit to work */
-  border-radius: 1.8rem;
-  border: 4px dashed rgba(255, 255, 255, 0.9);
-  background: linear-gradient(
-    180deg,
-    var(--sky) 0%,
-    var(--sky-light) 50%,
-    #ffffff 100%
-  );
-  overflow: hidden;
-  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.1);
-}
+/* =========================
+   Modules
+========================= */
 
-/* Image fills the container */
-.hero-image-placeholder img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center;
-  display: block;
-}
-
-/* Optional label overlay (if you want text on top) */
-.hero-image-placeholder::before {
-  content: ""; /* <-- required; include text here if you want */
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  font-weight: 700;
-  color: #ffffff;
-  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
-  z-index: 2; /* sits above image */
-  pointer-events: none;
-}
-
-.hero-badge {
-  position: absolute;
-  bottom: 1rem;
-  right: 1rem;
-  background: var(--purple);
-  color: #fff;
-  padding: 0.4rem 0.8rem;
-  border-radius: 999px;
-  font-size: 0.8rem;
-  font-weight: 700;
-}
-
-/* MODULES */
-#intro {
+#modules {
   background: #ffffff;
-  min-height: 80vh;
-}
-
-.intro-section {
-  min-height: 80vh;
-}
-
-.intro-video-wrapper {
-  max-width: 1100px;
-}
-.intro-video-placeholder {
-  position: relative;
-  aspect-ratio: 16 / 9;
-  border-radius: 1.25rem;
-  background: linear-gradient(135deg, #f3f5f7, #e8ebee);
-  display: grid;
-  place-items: center;
-  overflow: hidden;
-}
-
-.module-card {
-  border-radius: 1.5rem;
-  border: none;
-  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.07);
-  transition:
-    transform 0.15s ease,
-    box-shadow 0.15s ease;
-}
-
-.module-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 16px 30px rgba(0, 0, 0, 0.1);
-}
-
-.module-pill {
-  display: inline-block;
-  font-size: 0.75rem;
-  padding: 0.25rem 0.6rem;
-  border-radius: 999px;
-  background: rgba(154, 214, 59, 0.18);
-  color: #416400;
-  font-weight: 600;
 }
 
 .module-pill-btn {
   padding: 0.5rem 2rem;
-  border: 0px solid rgba(0, 0, 0, 0.25);
+  width: 200px;
+  border: 0;
   border-radius: 20px;
   font-size: 1.2rem;
   text-decoration: none;
   color: inherit;
   background: transparent;
+  text-align: center;
+  font-size: 1rem;
 }
 
 .module-pill-btn:hover {
@@ -298,53 +287,46 @@ section {
   object-fit: contain;
 }
 
-.module-icon:hover {
+.module-pill-btn:hover {
   filter: brightness(1.15);
   transform: translateY(-2px);
 }
 
-.section-title {
-  font-weight: 800;
-  color: var(--blue-monster);
-}
+/* =========================
+   FAQ (Accordion)
+========================= */
 
-.section-kicker {
-  text-transform: uppercase;
-  letter-spacing: 0.12em;
-  font-size: 0.8rem;
-  font-weight: 700;
-  color: var(--purple);
-}
-
-/* FAQ */
 #faq {
   background: linear-gradient(to bottom, #ffffff, var(--sky-light));
 }
 
-.accordion-button:not(.collapsed) {
-  background-color: rgba(176, 54, 201, 0.08);
+.accordion-button {
+  background-color: #b036c908;
   color: var(--text-dark);
+}
+
+.accordion-button:not(.collapsed) {
+  background-color: #b036c923;
+  color: var(--text-dark);
+  font-weight: 500;
 }
 
 .accordion-button:focus {
   box-shadow: 0 0 0 0.15rem rgba(154, 214, 59, 0.6);
 }
 
-#modules {
-  background: #ffffff;
-}
+/* =========================
+   Footer
+========================= */
 
-/* FOOTER */
 footer {
   font-size: 0.85rem;
   color: rgba(0, 0, 0, 0.6);
 }
 
-/* Scrollspy target container */
-main {
-  position: relative;
-  scroll-margin-top: 80px;
-}
+/* =========================
+   Responsive
+========================= */
 
 @media (max-width: 767.98px) {
   section {
@@ -355,7 +337,6 @@ main {
     text-align: center;
   }
 
-  .hero-tagline,
   #get-started p.lead {
     text-align: center;
   }
