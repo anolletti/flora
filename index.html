@@ -47,10 +47,10 @@
           id="navbarNav">
           <ul class="navbar-nav">
             <li class="nav-item">
-              <a class="nav-link" href="#intro">Intro</a>
+              <a class="nav-link active" href="#intro">Intro</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#get-started"
+              <a class="nav-link" aria-current="page" href="#get-started"
                 >Get Started</a
               >
             </li>
@@ -71,8 +71,6 @@
       <!-- WELCOME SECTION -->
 
       <section id="welcome" class="welcome-section">
-        <div class="overlay"></div>
-
         <div class="welcome-content">
           <h1 class="welcome-title">Welcome to FLORA</h1>
           <p class="welcome-subtitle">
@@ -109,15 +107,15 @@
                   src="https://flora.nbed.nb.ca/images/iconTablet.png"
                   alt="Intro video placeholder"
                   class="img-fluid" /> -->
-                <iframe
-                  id="powtoonVideo"
-                  width="640"
-                  height="360"
-                  src="https://gnb.powtoon.com/embed/?public_link_token=MvqKJ_vaH2F2-jJeCfMHI-SzGONqcjri03I-8rJlc1o&autoplay=1&mute=1"
-                  frameborder="0"
-                  allow="autoplay"
-                  allowfullscreen>
-                </iframe>
+                <div class="ratio ratio-16x9">
+                  <iframe
+                    id="powtoonVideo"
+                    src="https://gnb.powtoon.com/embed/?public_link_token=MvqKJ_vaH2F2-jJeCfMHI-SzGONqcjri03I-8rJlc1o&autoplay=1&mute=1"
+                    frameborder="0"
+                    allow="autoplay"
+                    allowfullscreen>
+                  </iframe>
+                </div>
               </div>
             </div>
           </div>
@@ -137,69 +135,76 @@
                 Get started in 3 steps... <i>allons-y!</i>
               </h1>
 
-              <div class="d-flex flex-row gap-3 lead">
-                <div
-                  class="py-5 step-pill col-lg-4 d-flex align-items-center justify-content-center text-center">
-                  <div class="d-flex flex-column align-items-center">
-                    <!-- Icon -->
-                    <img
-                      src="images/rigolette_reading_transparent.png"
-                      alt="Rigolette Reading"
-                      class="img-fluid rounded-circle mb-2"
-                      style="max-width: 160px" />
+              <div class="row g-3 lead">
+                <div class="col-12 col-md-4">
+                  <div
+                    class="py-5 step-pill h-100 d-flex align-items-center justify-content-center text-center mx-4">
+                    <div class="d-flex flex-column align-items-center">
+                      <!-- Icon -->
+                      <img
+                        src="images/rigolette_reading_transparent.png"
+                        alt="Rigolette Reading"
+                        class="img-fluid rounded-circle mb-2"
+                        style="max-width: 160px" />
 
-                    <!-- Text -->
-                    <div class="d-flex align-items-center gap-2">
-                      <div class="step-pill-number">1</div>
-                      <div>
-                        <strong
-                          ><a
-                            href="https://nbed.sharepoint.com/:w:/r/sites/MyHQ2/Shared%20Documents/General/FLORA%202.0/E.%20Renewal/Teacher%20Guides/QuickStartGuide_En.docx?d=w3516f439838e4d9d94c8524d9d4a927b&csf=1&web=1&e=haGmOz"
-                            >Read</a
-                          ></strong
-                        >
-                        quick start guide
+                      <!-- Text -->
+                      <div class="d-flex align-items-center gap-2">
+                        <div class="step-pill-number">1</div>
+                        <div>
+                          <strong
+                            ><a
+                              href="https://nbed.sharepoint.com/:w:/r/sites/MyHQ2/Shared%20Documents/General/FLORA%202.0/E.%20Renewal/Teacher%20Guides/QuickStartGuide_En.docx?d=w3516f439838e4d9d94c8524d9d4a927b&csf=1&web=1&e=haGmOz"
+                              >Read</a
+                            ></strong
+                          >
+                          quick start guide
+                        </div>
                       </div>
                     </div>
                   </div>
                 </div>
 
-                <div
-                  class="step-pill col-lg-4 d-flex align-items-center justify-content-center text-center">
-                  <div class="d-flex flex-column align-items-center">
-                    <!-- Icon -->
-                    <img
-                      src="images/rigolo_download.png"
-                      alt="Rigolette Reading"
-                      class="img-fluid mb-2"
-                      style="max-width: 160px" />
+                <div class="col-12 col-md-4">
+                  <div
+                    class="step-pill h-100 d-flex align-items-center justify-content-center text-center mx-4">
+                    <div class="d-flex flex-column align-items-center">
+                      <!-- Icon -->
+                      <img
+                        src="images/rigolo_download.png"
+                        alt="Rigolette Reading"
+                        class="img-fluid mb-2"
+                        style="max-width: 160px" />
 
-                    <!-- Text -->
-                    <div class="d-flex align-items-center gap-2">
-                      <div class="step-pill-number">2</div>
-                      <div>
-                        <strong><a href="#quickstart">Download</a></strong>
-                        level guides and printables
+                      <!-- Text -->
+                      <div class="d-flex align-items-center gap-2">
+                        <div class="step-pill-number">2</div>
+                        <div>
+                          <strong><a href="#quickstart">Download</a></strong>
+                          guides & printables
+                        </div>
                       </div>
                     </div>
                   </div>
                 </div>
-                <div
-                  class="step-pill col-lg-4 d-flex align-items-center justify-content-center text-center">
-                  <div class="d-flex flex-column align-items-center">
-                    <!-- Icon -->
-                    <img
-                      src="images/owl_tablet.png"
-                      alt="Prof Owl on Tablet"
-                      class="img-fluid mb-2"
-                      style="max-width: 160px" />
 
-                    <!-- Text -->
-                    <div class="d-flex align-items-center gap-2">
-                      <div class="step-pill-number">3</div>
-                      <div>
-                        <strong><a href="#quickstart">Access</a></strong>
-                        modules below
+                <div class="col-12 col-md-4">
+                  <div
+                    class="step-pill h-100 d-flex align-items-center justify-content-center text-center mx-4">
+                    <div class="d-flex flex-column align-items-center">
+                      <!-- Icon -->
+                      <img
+                        src="images/owl_tablet.png"
+                        alt="Prof Owl on Tablet"
+                        class="img-fluid mb-2"
+                        style="max-width: 160px" />
+
+                      <!-- Text -->
+                      <div class="d-flex align-items-center gap-2">
+                        <div class="step-pill-number">3</div>
+                        <div>
+                          <strong><a href="#quickstart">Access</a></strong>
+                          modules
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -216,7 +221,7 @@
             <div class="col-12">
               <p class="section-kicker mb-1">Interactive Modules</p>
               <h2 id="getting-started-title" class="section-title mb-2">
-                Access modules below.
+                Access modules.
               </h2>
             </div>
 
@@ -261,7 +266,7 @@
                       <h4 class="h4 mb-0 level-one">Level 1</h4>
                     </div>
 
-                    <div class="d-flex flex-wrap gap-2">
+                    <div class="d-flex flex-wrap gap-2 justify-content-center">
                       <a
                         href="https://flora.nbed.nb.ca/FLORA_lvl1_mod1_HTML5_v4/story.html"
                         aria-label="Level 1 Module 1"
@@ -350,7 +355,7 @@
                       <h4 class="h4 mb-0 level-two">Level 2</h4>
                     </div>
 
-                    <div class="d-flex flex-wrap gap-2">
+                    <div class="d-flex flex-wrap gap-2 justify-content-center">
                       <a
                         href="https://flora.nbed.nb.ca/FLORA_lvl2_mod1_HTML5_v3/story.html"
                         aria-label="Level 2 Module 1"
@@ -439,7 +444,7 @@
                       <h4 class="h4 mb-0 level-three">Level 3</h4>
                     </div>
 
-                    <div class="d-flex flex-wrap gap-2">
+                    <div class="d-flex flex-wrap gap-2 justify-content-center">
                       <a
                         href="https://flora.nbed.nb.ca/FLORA_lvl3_mod1_HTML5_v4/story.html"
                         aria-label="Level 3 Module 1"
@@ -528,7 +533,7 @@
                       <h4 class="h4 mb-0 level-four">Level 4</h4>
                     </div>
 
-                    <div class="d-flex flex-wrap gap-2">
+                    <div class="d-flex flex-wrap gap-2 justify-content-center">
                       <a
                         href="https://flora.nbed.nb.ca/FLORA_lvl4_mod1_HTML5_v2/story.html"
                         aria-label="Level 4 Module 1"
