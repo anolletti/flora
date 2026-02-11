@@ -8,7 +8,7 @@
   --leaf: #9ad63b;
   --purple: #b036c9;
   --blue-monster: #36a3c9;
-  --text-dark: #273043;
+  --text-dark: #141924;
   --nav-accent: #2f80ed;
   --text-level-one: #f747ba;
   --text-level-two: #c71f2e;
@@ -128,7 +128,7 @@ section {
   content: "";
   position: absolute;
   inset: 0;
-  background: rgba(255, 255, 255, 0.7);
+  background: rgba(255, 255, 255, 0.6);
   z-index: 1;
 }
 
@@ -143,27 +143,113 @@ section {
 .welcome-content {
   position: relative;
   z-index: 2;
-  text-align: center;
   color: var(--text-dark);
 }
 
+/* ---------- Motion-safe defaults (never hide content) ---------- */
+.welcome-title,
+.welcome-subtitle,
+.welcome-highlighted-text {
+  font-family: "Nunito", sans-serif;
+}
+
+/* Typography polish */
 .welcome-title {
   font-family: "Nunito", sans-serif;
   font-weight: 900;
-  font-size: clamp(2.5rem, 6vw, 4.5rem);
-  margin-bottom: 0.2rem;
+  font-size: clamp(2.8rem, 6vw, 4.3rem);
+  line-height: 1.05;
+  letter-spacing: -0.02em;
 }
 
 .welcome-subtitle {
-  font-family: "Nunito", sans-serif;
-  font-weight: 600;
-  font-size: clamp(1.2rem, 3vw, 1.8rem);
-  color: #3f4f5a;
+  font-weight: 650; /* more premium than 600 */
+  font-size: clamp(1.15rem, 2.6vw, 1.75rem);
+  line-height: 1.35;
+  margin: 0;
+  color: rgba(26, 31, 43, 0.82); /* or use your --text-dark w/ alpha */
 }
 
 .welcome-highlighted-text {
   color: var(--purple);
   font-weight: 900;
+  position: relative;
+  display: inline-block;
+}
+
+/* ---------- Animations only when allowed ---------- */
+@media (prefers-reduced-motion: no-preference) {
+  .welcome-title {
+    opacity: 1;
+    transform: translateY(18px) scale(0.98);
+    animation: zoomInHero 1600ms cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  }
+
+  .welcome-subtitle {
+    opacity: 0;
+    transform: translateY(18px);
+    animation: heroFadeUp 1400ms cubic-bezier(0.22, 1, 0.36, 1) 400ms forwards;
+  }
+
+  .welcome-highlighted-text {
+    opacity: 0;
+    transform: translateY(10px);
+    animation: highlightPop 1200ms cubic-bezier(0.22, 1, 0.36, 1) 900ms forwards;
+  }
+
+  .welcome-highlighted-text::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -0.15em;
+    height: 0.35em;
+    background: #5aa517; /* darker green */
+    border-radius: 999px;
+    transform: scaleX(0);
+    transform-origin: left;
+    animation: underlineSweep 1800ms cubic-bezier(0.22, 1, 0.36, 1) 1200ms
+      forwards;
+    z-index: -1;
+  }
+}
+/* ---------- Keyframes ---------- */
+@keyframes heroEnter {
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes heroFadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes highlightPop {
+  60% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes zoomInHero {
+  0% {
+    opacity: 1;
+    transform: scale(0.5);
+  }
+  60% {
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+  }
 }
 
 /* =========================
