@@ -90,7 +90,7 @@ const I18N = {
     faq4_a:
       'Articulate n’est plus pris en charge; vous ne pouvez donc plus télécharger les modules FLORA. Veuillez accéder aux <a href="#modules">modules</a> sur ce site.',
     faq3_a: `Communiquez avec la personne-ressource en <strong>FLS</strong> de votre district pour le soutien pédagogique et les ressources. Pour les enjeux techniques, veuillez créer un <strong>billet d’assistance</strong> auprès du soutien TI de votre district.`,
-    faq6_a: `Bien sûr! De solides liens école-famille soutiennent l’apprentissage du français. N’hésitez pas à utiliser ce <strong><a href="https://nbed.sharepoint.com/:f:/r/sites/Test880/Shared%20Documents/1.1%20FLORA/3.%20Printable%20Resources?csf=1&web=1&e=kpK1cN" target="_blank">QR Code à emporter</a></strong> pour que les familles puissent accéder facilement à FLORA à la maison.`,
+    faq6_a: `Bien sûr! De solides liens école-famille soutiennent l’apprentissage du français. N’hésitez pas à utiliser ce <strong><a href="https://nbed.sharepoint.com/:f:/r/sites/Test880/Shared%20Documents/1.1%20FLORA/3.%20Printable%20Resources?csf=1&web=1&e=kpK1cN" target="_blank">Code QR à emporter</a></strong> pour que les familles puissent accéder facilement à FLORA à la maison.`,
     footer_org:
       "Ministère de l’Éducation et du Développement de la petite enfance du N.-B.",
     footer_funding:
