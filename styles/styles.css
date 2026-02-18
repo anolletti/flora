@@ -298,6 +298,20 @@ section {
   overflow: hidden;
 }
 
+/* Hide both by default (prevents flash on load) */
+.intro-video {
+  display: none;
+}
+
+/* Show correct video based on <html lang=""> */
+html[lang="en"] .lang-en {
+  display: block;
+}
+
+html[lang="fr"] .lang-fr {
+  display: block;
+}
+
 /* =========================
    Get Started (Hero)
 ========================= */
