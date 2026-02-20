@@ -53,7 +53,7 @@ const I18N = {
     nav_modules: "Modules",
     nav_faq: "FAQ",
     welcome_title: "Bienvenue à FLORA",
-    welcome_subtitle: `Occasions d’apprentissage du français langue seconde <span class="welcome-highlighted-text">pour tous</span>`,
+    welcome_subtitle: `Possibilités d’apprentissage du français langue seconde <span class="welcome-highlighted-text">pour tous</span>`,
     intro_kicker: "Dans la ressource",
     intro_title: "Qu’est-ce que FLORA?",
     intro_lead:
