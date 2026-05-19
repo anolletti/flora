@@ -1,0 +1,491 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FLORA 2.0 Course Promotional Page</title>
+
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        background: #eef8ff;
+        font-family: Arial, Helvetica, sans-serif;
+        color: #141924;
+      }
+
+      .page {
+        width: 8.5in;
+        max-height: 11in;
+        margin: 0 auto;
+        padding: 0in;
+        background: #eef8ff;
+      }
+
+      .card {
+        width: 100%;
+        max-height: 10.24in;
+        background: #ffffff;
+        border: 1px solid #c4e6ff;
+        border-radius: 22px;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        box-shadow: 0 10px 30px rgba(20, 25, 36, 0.08);
+      }
+
+      .banner {
+        background: linear-gradient(
+          135deg,
+          #79c9ff 0%,
+          #c4e6ff 58%,
+          #f4fbff 100%
+        );
+        text-align: center;
+        padding: 26px 30px 24px;
+      }
+
+      .banner img {
+        max-width: 215px;
+        width: 66%;
+        height: auto;
+        margin: 0 auto 12px;
+        display: block;
+      }
+
+      .eyebrow {
+        display: inline-block;
+        background: #ffffff;
+        color: #2f6f4f;
+        font-size: 12px;
+        font-weight: 800;
+        letter-spacing: 0.4px;
+        text-transform: uppercase;
+        border-radius: 999px;
+        padding: 8px 14px;
+        margin-bottom: 12px;
+        border: 1px solid rgba(47, 111, 79, 0.18);
+      }
+
+      h1 {
+        margin: 0;
+        font-size: 30px;
+        line-height: 1.08;
+        color: #141924;
+        letter-spacing: -0.8px;
+      }
+
+      .subtitle {
+        max-width: 570px;
+        margin: 11px auto 0;
+        font-size: 18px;
+        line-height: 1.4;
+        font-weight: 650;
+        color: #141924;
+      }
+
+      .audience-banner {
+        margin: 18px auto 0;
+        max-width: 560px;
+        background: rgba(255, 255, 255, 0.76);
+        border: 1px solid rgba(255, 255, 255, 0.95);
+        border-radius: 999px;
+        padding: 10px 18px;
+        font-size: 15px;
+        font-weight: 800;
+        color: #2f6f4f;
+      }
+
+      .body {
+        padding: 28px 34px 26px;
+        flex: 1;
+      }
+
+      .lead {
+        font-size: 18.5px;
+        line-height: 1.58;
+        margin: 0 auto 20px;
+        max-width: 660px;
+        text-align: center;
+      }
+
+      .cta-wrap {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 24px;
+        margin: 0px 0 24px;
+        padding: 22px;
+        background: #f4fbff;
+        border: 1px solid #d8efff;
+        border-radius: 20px;
+      }
+
+      .cta-content {
+        flex: 1;
+      }
+
+      .cta-content h2 {
+        margin: 0 0 8px;
+        color: #141924;
+        font-size: 26px;
+        line-height: 1.15;
+        letter-spacing: -0.3px;
+      }
+
+      .cta-text {
+        font-size: 16px;
+        line-height: 1.58;
+        margin: 0 0 16px;
+        color: #334155;
+      }
+
+      .cta {
+        background: #2f80ed;
+        color: #ffffff;
+        text-decoration: none;
+        padding: 15px 28px;
+        border-radius: 12px;
+        font-size: 18px;
+        font-weight: 800;
+        display: inline-block;
+      }
+
+      .url-note {
+        margin: 10px 0 0;
+        font-size: 12.5px;
+        color: #4b5b70;
+        word-break: break-word;
+      }
+
+      .qr-box {
+        width: 170px;
+        flex-shrink: 0;
+        text-align: center;
+      }
+
+      .qr-placeholder {
+        width: 150px;
+        height: 150px;
+        border: 3px dashed #9bb7d3;
+        border-radius: 16px;
+        background: #ffffff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto 10px;
+        font-weight: 800;
+        color: #4b5b70;
+        font-size: 18px;
+        line-height: 1.2;
+        text-align: center;
+        padding: 12px;
+      }
+
+      .qr-text {
+        margin: 0;
+        font-size: 14px;
+        color: #4b5b70;
+        font-weight: 700;
+      }
+
+      .quick-facts {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 12px;
+        margin: 22px 0 24px;
+      }
+
+      .fact {
+        background: #ffffff;
+        border: 1px solid #d8efff;
+        border-radius: 16px;
+        padding: 15px 12px;
+        text-align: center;
+      }
+
+      .fact strong {
+        display: block;
+        font-size: 17px;
+        color: #b036c9;
+        margin-bottom: 6px;
+      }
+
+      .fact span {
+        display: block;
+        font-size: 13.5px;
+        line-height: 1.38;
+        color: #334155;
+      }
+
+      .section-grid {
+        display: grid;
+        grid-template-columns: 1.15fr 0.85fr;
+        gap: 18px;
+        align-items: start;
+        margin-top: 8px;
+      }
+
+      .section-card {
+        background: #ffffff;
+        border: 1px solid #e2edf7;
+        border-radius: 18px;
+        padding: 18px 20px;
+      }
+
+      h2 {
+        font-size: 22px;
+        margin: 0 0 11px;
+        line-height: 1.2;
+        letter-spacing: -0.2px;
+      }
+
+      .why-heading {
+        color: #b036c9;
+      }
+
+      .learn-heading {
+        color: #36a3c9;
+      }
+
+      .credit-heading {
+        color: #2f6f4f;
+      }
+
+      p {
+        font-size: 15.5px;
+        line-height: 1.58;
+      }
+
+      .section-card p {
+        margin: 0 0 12px;
+      }
+
+      ul {
+        font-size: 15px;
+        line-height: 1.52;
+        padding-left: 20px;
+        margin: 8px 0 0;
+      }
+
+      li {
+        margin-bottom: 7px;
+      }
+
+      li:last-child {
+        margin-bottom: 0;
+      }
+
+      .highlight {
+        background: #f8fff0;
+        border-left: 6px solid #9ad63b;
+        padding: 15px 17px;
+        border-radius: 14px;
+        margin: 18px 0;
+      }
+
+      .highlight p {
+        margin: 0;
+        font-weight: 700;
+        color: #243447;
+      }
+
+      .signup-box {
+        background: #fffaf0;
+        border: 1px solid #ffe0a8;
+        border-radius: 18px;
+        padding: 17px 20px;
+        margin-top: 18px;
+      }
+
+      .signup-box p {
+        margin: 0 0 8px;
+      }
+
+      .signup-box p:last-child {
+        margin-bottom: 0;
+      }
+
+      a {
+        color: #2f80ed;
+        font-weight: 800;
+      }
+
+      .footer {
+        background: #141924;
+        color: #ffffff;
+        text-align: center;
+        padding: 15px 18px;
+        font-size: 14px;
+        font-weight: 700;
+      }
+
+      @media print {
+        @page {
+          size: letter;
+          margin: 0;
+        }
+
+        html,
+        body {
+          width: 8.5in;
+          height: 11in;
+          background: #ffffff;
+          -webkit-print-color-adjust: exact;
+          print-color-adjust: exact;
+        }
+
+        .page {
+          width: 8.5in;
+          max-height: 11in;
+          margin: 0;
+          padding: 0.36in;
+          background: #eef8ff;
+        }
+
+        .card {
+          min-height: 10.28in;
+          box-shadow: none;
+          break-inside: avoid;
+          page-break-inside: avoid;
+        }
+
+        .cta {
+          color: #ffffff !important;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <main class="page">
+      <section class="card">
+        <header class="banner">
+          <img
+            src="https://flora.nbed.nb.ca/images/main_image.svg"
+            alt="FLORA characters" />
+
+          <h1>Are You a K–2 Explore Your World Educator?</h1>
+
+          <div class="audience-banner">
+            Bring French learning to life with FLORA 2.0!
+          </div>
+        </header>
+
+        <section class="body">
+          <div class="cta-wrap">
+            <div class="cta-content">
+              <h2>Register Today</h2>
+              <p class="cta-text">
+                Join the FLORA 2.0 asynchronous learning module and explore
+                practical, ready-to-use strategies to support French oral
+                communication in your classroom.
+              </p>
+
+              <a class="cta" href="https://forms.office.com/r/E5Fq29utbK/">
+                Sign Up for FLORA 2.0 Module
+              </a>
+
+              <p class="url-note">https://forms.office.com/r/E5Fq29utbK/</p>
+            </div>
+
+            <div class="qr-box">
+              <img
+                src="/images/training_qr_code.png"
+                alt="QR Code Placeholder"
+                class="qr-placeholder" />
+              <p class="qr-text">Scan to register</p>
+            </div>
+          </div>
+
+          <div class="quick-facts">
+            <div class="fact">
+              <img
+                src="https://flora.nbed.nb.ca/images/rigoletteBook.png"
+                alt="Flexible icon"
+                style="width: 100px; height: auto; margin-bottom: 8px" />
+              <strong>Flexible</strong>
+              <span>Complete the module asynchronously at your own pace.</span>
+            </div>
+
+            <div class="fact">
+              <img
+                src="https://flora.nbed.nb.ca/images/owlTablet.png"
+                alt="Practical Icon"
+                style="width: 100px; height: auto; margin-bottom: 8px" />
+              <strong>Practical</strong>
+              <span>Explore classroom-ready FLORA resources for K–2.</span>
+            </div>
+
+            <div class="fact">
+              <img
+                src="https://flora.nbed.nb.ca/images/rigoloDownload.png"
+                alt="Accessible Icon"
+                style="width: 100px; height: auto; margin-bottom: 8px" />
+              <strong>Accessible</strong>
+              <span
+                >Suitable for educators with all comfort levels in French.</span
+              >
+            </div>
+          </div>
+
+          <!-- <div class="section-grid">
+            <div class="section-card">
+              <h2 class="why-heading">Why Take This Course?</h2>
+
+              <ul>
+                <li>
+                  Find what you need quickly within the FLORA 2.0 resource.
+                </li>
+                <li>
+                  Support oral communication through simple, practical
+                  activities.
+                </li>
+                <li>
+                  Connect FLORA resources to classroom instruction and student
+                  engagement.
+                </li>
+              </ul>
+            </div>
+
+            <div class="section-card">
+              <h2 class="learn-heading">What You Will Explore</h2>
+              <ul>
+                <li>the purpose and structure of FLORA 2.0;</li>
+                <li>practical resources for oral communication in French;</li>
+                <li>how to navigate FLORA materials with more confidence.</li>
+              </ul>
+            </div>
+          </div> -->
+
+          <div class="highlight">
+            <p>
+              By the end of the module, you will have a clearer understanding of
+              how to use out-of-the-box resources to support effective language
+              learning in your Explore Your World classroom.
+            </p>
+          </div>
+
+          <!-- <div class="signup-box">
+            <h2 class="credit-heading">Questions?</h2>
+
+            <p>
+              Contact
+              <a href="mailto:Anthony.Nolletti@gnb.ca"
+                >Anthony.Nolletti@gnb.ca</a
+              >.
+            </p>
+          </div> -->
+        </section>
+
+        <footer class="footer">
+          Questions? Contact
+          <a href="mailto:anthony.nollett@gnb.ca">Anthony.Nolletti@gnb.ca</a>
+        </footer>
+      </section>
+    </main>
+  </body>
+</html>
