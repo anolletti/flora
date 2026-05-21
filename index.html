@@ -17,6 +17,19 @@
     <link rel="stylesheet" href="styles/styles.css" />
     <script src="js/date.js" defer></script>
     <script src="js/language.js" defer></script>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=UA-162511090-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "UA-162511090-1");
+    </script>
   </head>
   <body
     data-bs-spy="scroll"
@@ -188,9 +201,9 @@
           <div class="row align-items-center gy-4">
             <!-- Text / Steps -->
             <div class="col-lg-12">
-              <!-- <p class="hero-tagline mb-2">
-                Playful resource • Exemplary practices
-              </p> -->
+              <p class="section-kicker mb-1" data-i18n="teachers_only_section">
+                Teacher's Only Section
+              </p>
               <h1 class="hero-title mb-4" data-i18n-html="get_started_title">
                 Get started in 3 steps... <i>allons-y!</i>
               </h1>
@@ -275,9 +288,7 @@
                         <div class="step-pill-number">3</div>
                         <div>
                           <strong data-i18n="step3_verb">Access</strong>
-                          <a href="#quickstart" data-i18n="step3_link"
-                            >modules</a
-                          >
+                          <a href="#modules" data-i18n="step3_link">modules</a>
                         </div>
                       </div>
                     </div>
@@ -887,6 +898,36 @@
                     ></strong
                   >
                   so families can easily access FLORA at home.
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="faq7-heading">
+                <button
+                  class="accordion-button collapsed"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#faq7"
+                  aria-expanded="false"
+                  aria-controls="faq7">
+                  <span data-i18n="faq7_q"
+                    >I am an educator outside of New Brunswick. How do I access
+                    FLORA?</span
+                  >
+                </button>
+              </h2>
+              <div
+                id="faq7"
+                class="accordion-collapse collapse"
+                aria-labelledby="faq7-heading"
+                data-bs-parent="#faqAccordion">
+                <div class="accordion-body" data-i18n-html="faq7_a">
+                  Contact
+                  <a href="mailto:edcommunication@gnb.ca"
+                    >edcommunication@gnb.ca</a
+                  >
+                  to inquire about access to FLORA outside of New Brunswick
+                  through the FSL Learning Specialist.
                 </div>
               </div>
             </div>
